@@ -33,6 +33,8 @@
       }
     </style>
     <script>
+      var location = "in Ottawa, Ontario";
+      
       // Set the date we're counting down to
       var countDownDate = new Date("Jul 22, 2020 12:00:00").getTime();
 
@@ -57,6 +59,7 @@
 
         // Modify the status text and styling based on the countdown value
         var statusElem = document.getElementById("status");
+        var locationEmen = document.getElementById("location");
         
         // If the count down is finished, write some text and style        
         if (distance <= 0) {
@@ -65,15 +68,19 @@
 
           if(statusElem.classList.contains("no") == false) {
             statusElem.classList.remove("yes"); 
-            statusElem.classList.add("no");        
+            statusElem.classList.add("no");
+            
             statusElem.innerHTML = "No";
+            locationEmen.innerHTML = location;
           }
           
         }else{ // Countdown is not finished
           if(statusElem.classList.contains("yes") == false) {
             statusElem.classList.remove("no"); 
-            statusElem.classList.add("yes");        
+            statusElem.classList.add("yes");    
+            
             statusElem.innerHTML = "Yes";
+            locationEmen.innerHTML = location;
           }
         }
       }, 1000);
@@ -84,7 +91,7 @@
     <div class="centered">
       <div id="status" class="status"></div>
       <div align="right" style="height:75px;">
-        <div class="location">in Ottawa, Ontario</div>
+        <div class="location"></div>
         <div id="countdown"></div>
       </div>
     </div>
