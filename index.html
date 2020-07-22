@@ -33,7 +33,7 @@
       }
     </style>
     <script>
-      var location = "in Ottawa, Ontario";
+      var locationText = "in Ottawa, Ontario";
       
       // Set the date we're counting down to
       var countDownDate = new Date("Jul 22, 2020 12:00:00").getTime();
@@ -71,7 +71,7 @@
             statusElem.classList.add("no");
             
             statusElem.innerHTML = "No";
-            locationEmen.innerHTML = location;
+            locationEmen.innerHTML = locationText;
           }
           
         }else{ // Countdown is not finished
@@ -80,7 +80,7 @@
             statusElem.classList.add("yes");    
             
             statusElem.innerHTML = "Yes";
-            locationEmen.innerHTML = location;
+            locationEmen.innerHTML = locationText;
           }
         }
       }, 1000);
