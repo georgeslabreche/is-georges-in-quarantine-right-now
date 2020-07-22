@@ -20,6 +20,15 @@
         font-size: 300px;
       }
       
+      .status.yes {
+        color: red; 
+      }
+      
+      .status.no {
+        color: #4caf50; 
+      }
+      
+      
       .location, #countdown {
         font-size: 30px;
       }
@@ -47,13 +56,26 @@
         document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
         + minutes + "m " + seconds + "s ";
 
-        // If the count down is finished, write some text
+        // Modify the status text and styling based on the countdown value
+        var statusElem = document.getElementById("status");
+        
+        // If the count down is finished, write some text and style        
         if (distance <= 0) {
           clearInterval(x);
           document.getElementById("countdown").innerHTML = "";
-          document.getElementById("status").innerHTML = "No";
-        }else{
-          document.getElementById("status").innerHTML = "Yes"; 
+
+          if(statusElem.classList.contains("no") == false) {
+            statusElem.classList.remove("yes"); 
+            statusElem.classList.add("no");        
+            statusElem.innerHTML = "No";
+          }
+          
+        }else{ // Countdown is not finished
+          if(statusElem.classList.contains("yes") == false) {
+            statusElem.classList.remove("no"); 
+            statusElem.classList.add("yes");        
+            statusElem.innerHTML = "Yes";
+          }
         }
       }, 1000);
       </script>
